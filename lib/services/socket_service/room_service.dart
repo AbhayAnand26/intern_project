@@ -11,9 +11,7 @@ class RoomService {
       final res = await _dio.post(
         '/api/rooms/$roomId/join',
         options: Options(
-          headers: {
-            'Authorization': 'Bearer ${SessionController.user.token}'
-          },
+          headers: {'Authorization': 'Bearer ${SessionController.user.token}'},
         ),
       );
       return res.statusCode == 200;
@@ -26,9 +24,7 @@ class RoomService {
     await _dio.post(
       '/api/rooms/$roomId/leave',
       options: Options(
-        headers: {
-          'Authorization': 'Bearer ${SessionController.user.token}'
-        },
+        headers: {'Authorization': 'Bearer ${SessionController.user.token}'},
       ),
     );
   }

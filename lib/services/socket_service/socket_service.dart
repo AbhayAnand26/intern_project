@@ -101,14 +101,11 @@ class SocketService {
     socket?.emit('call:ice', {'to': to, 'candidate': candidate});
   }
 
-  void onOffer(void Function(dynamic) cb) =>
-      socket?.on('call:offer', cb);
+  void onOffer(void Function(dynamic) cb) => socket?.on('call:offer', cb);
 
-  void onAnswer(void Function(dynamic) cb) =>
-      socket?.on('call:answer', cb);
+  void onAnswer(void Function(dynamic) cb) => socket?.on('call:answer', cb);
 
-  void onIce(void Function(dynamic) cb) =>
-      socket?.on('call:ice', cb);
+  void onIce(void Function(dynamic) cb) => socket?.on('call:ice', cb);
 
   // ================= CLEANUP =================
   void disconnect() {

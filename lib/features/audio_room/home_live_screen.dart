@@ -125,7 +125,6 @@ class _HomeLiveScreenState extends State<HomeLiveScreen> {
     _registerWebRTCEvents();
   }
 
-
   /* ================= WEBRTC ================= */
 
   Future<void> _createPeer(String userId, {bool offer = false}) async {
@@ -292,7 +291,6 @@ class _HomeLiveScreenState extends State<HomeLiveScreen> {
     _messageController.clear();
   }
 
-
   void _addMessage(String message) {
     if (!mounted) return;
     setState(() {
@@ -396,49 +394,49 @@ class _HomeLiveScreenState extends State<HomeLiveScreen> {
         // Join / Leave button
         _joined
             ? ElevatedButton.icon(
-          onPressed: () => Navigator.pop(context),
-          icon: const Icon(Icons.logout, color: Colors.white),
-          label: const Text("Leave"),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.redAccent,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 8,
-            ),
-          ),
-        )
+                onPressed: () => Navigator.pop(context),
+                icon: const Icon(Icons.logout, color: Colors.white),
+                label: const Text("Leave"),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.redAccent,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 8,
+                  ),
+                ),
+              )
             : ElevatedButton(
-          onPressed: _joinRoom,
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.greenAccent.shade700,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 8,
-            ),
-          ),
-          child: _loading
-              ? const SizedBox(
-            height: 18,
-            width: 18,
-            child: CircularProgressIndicator(
-              strokeWidth: 2,
-              color: Colors.white,
-            ),
-          )
-              : const Text(
-            "JOIN",
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
+                onPressed: _joinRoom,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.greenAccent.shade700,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 8,
+                  ),
+                ),
+                child: _loading
+                    ? const SizedBox(
+                        height: 18,
+                        width: 18,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 2,
+                          color: Colors.white,
+                        ),
+                      )
+                    : const Text(
+                        "JOIN",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+              ),
       ],
     ),
   );
@@ -564,13 +562,13 @@ class _HomeLiveScreenState extends State<HomeLiveScreen> {
                 backgroundImage: avatar != null ? NetworkImage(avatar) : null,
                 child: avatar == null
                     ? Text(
-                  name.isNotEmpty ? name[0].toUpperCase() : "?",
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                  ),
-                )
+                        name.isNotEmpty ? name[0].toUpperCase() : "?",
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )
                     : null,
               ),
 
@@ -695,12 +693,12 @@ class _HomeLiveScreenState extends State<HomeLiveScreen> {
                   shape: BoxShape.circle,
                   boxShadow: _joined
                       ? [
-                    BoxShadow(
-                      color: (_isMuted ? Colors.redAccent : Colors.green)
-                          .withOpacity(0.5),
-                      blurRadius: 8,
-                    ),
-                  ]
+                          BoxShadow(
+                            color: (_isMuted ? Colors.redAccent : Colors.green)
+                                .withOpacity(0.5),
+                            blurRadius: 8,
+                          ),
+                        ]
                       : [],
                 ),
                 child: Icon(
